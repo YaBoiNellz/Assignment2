@@ -99,6 +99,7 @@ function fillAll(){
 
 // Clear all cells
 // End of Code
+// This is the end of implementing the JavaScript Functions these should be the end 
 function clearAll(){
 	const rows = table.children;
   for (let i = 0; i < numRows; i++) {

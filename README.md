@@ -4,7 +4,7 @@
 # GitHub Repository Link: https://github.com/YaBoiNellz/Assignment2
 # Group Members: None
 
-In this assignment I recreated the methods using Javascript methods 
+In this assignment I recreated the methods using Javascript methods following the instructions given by the assignment. I went into each file given such as the index html, script js, styles css file and I added my new functions and information to the code 
 
     Explanation for Solution:
     Function addR:
