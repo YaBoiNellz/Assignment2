@@ -1,45 +1,110 @@
 // Declare global variables
-let numRows = 0;
-let numCols = 0;
-let colorSelected; 
+let numRows = 1;
+let numCols = 3;
+let colorSelected = 'white';
+
+// Declare table variable
+let table = document.getElementById("gridTable");
+
+function handleColorChange(event) {
+	event.target.style.backgroundColor = colorSelected;
+}
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+  let newRow = document.createElement("tr");
+	
+  for (let i = 0; i < numCols; i++) {
+    let newCell = document.createElement("td");
+    newCell.onclick = handleColorChange;
+    newRow.appendChild(newCell);
+  }
+
+	if(numCols === 0) {
+		newRow.appendChild(document.createElement("td"));
+		numCols++;
+	}
+
+  table.appendChild(newRow);
+  numRows++;
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+  for (let i = 0; i < numRows; i++) {
+    let row = table.children[i];
+    let newCell = document.createElement("td");
+    newCell.onclick = handleColorChange;
+    row.appendChild(newCell);
+  }
+	if(numRows === 0) {
+		let row = document.createElement("tr");
+		row.appendChild(document.createElement("td"));
+		table.appendChild(row);
+		numRows++;
+	}
+  numCols++;
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+  if (numRows > 0) {
+    table.removeChild(table.children[table.children.length - 1]);
+    numRows--;
+  }
+	if(numRows === 0) numCols = 0;
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+  if (numCols > 0) {
+    for (let i = 0; i < numRows; i++) {
+			let lastChild = table.children[i].children[table.children[i].children.length - 1];
+      table.children[i].removeChild(lastChild);
+    }
+    numCols--;
+  }
+
+	if(numCols === 0) numRows = 0;
 }
 
 // Set global variable for selected color
 function selectColor(){
-    colorSelected = document.getElementById("selectedColorId").value;
-    console.log(colorSelected);
+  colorSelected = document.getElementById("selectedColorId").value.toLowerCase();
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+	const rows = table.children;
+  for (let i = 0; i < numRows; i++) {
+		const columns = rows[i].children;
+    for (let j = 0; j < numCols; j++) {
+			console.log(columns[j].style.backgroundColor);
+			if (!columns[j].style.backgroundColor || columns[j].style.backgroundColor === 'white')
+      columns[j].style.backgroundColor = colorSelected;
+    }
+  }
 }
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+	const rows = table.children;
+  for (let i = 0; i < numRows; i++) {
+		const columns = rows[i].children;
+    for (let j = 0; j < numCols; j++) {
+      columns[j].style.backgroundColor = colorSelected;
+    }
+  }
 }
 
 // Clear all cells
+// End of Code
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+	const rows = table.children;
+  for (let i = 0; i < numRows; i++) {
+		const columns = rows[i].children;
+    for (let j = 0; j < numCols; j++) {
+      columns[j].style.backgroundColor = 'white';
+    }
+  }
 }

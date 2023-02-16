@@ -1,32 +1,58 @@
-# grid-maker-starter-code
-This repository is the starter code for Assignment 3 - Grid Maker.
+# Assignment 2: JavaScript Methods 
+# Name: Darnell Chambers Gordon
+# GitHub Username: YaBoiNellz
+# GitHub Repository Link: https://github.com/YaBoiNellz/Assignment2
+# Group Members: None
 
-### Live Link
-[Website link](https://johnnylaicode.github.io/grid-maker-starter-code/)
+In this assignment I recreated the methods using Javascript methods 
 
-----------
-### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as the starter codebase
-1.	Log on to GitHub
-2.	Click on the + sign in the top right corner (next to the user icon)
-3.	In the dropdown menu, select "Import repository"
-4.	A new page will open
-5.	In "Your old repository’s clone URL" field, enter: `https://github.com/johnnylaicode/grid-maker-starter-code`
-6.	In "Your new repository details" field, enter your own repository name (e.g., "assignment-3")
-7.	Click on the "Begin import" button to start the process
-8.	After the process completed, your new "assignment-3" repository is created – as a completely independent codebase
-9.	From this point on, you can clone your new repository, make changes, create feature branches, and create/merge pull requests
+    Explanation for Solution:
+    Function addR:
+	I created a new row element 'tr'.
 
-----------
-### 2. Use the information below to ***clone*** the starter codebase to your local machine
-After creating the starter codebase "assignment-3" repository on GitHub (see above), you can clone it to your local machine. The instructions on how to clone a GitHub repository are available at this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+	case of numCols > 0:
+		I appended numCols 'td' elements inside of it.
+		
+	
+	case of numCols == 0:
+		I append One 'td' element inside of it.
+		Added one to numCols
+	
+	Added one to numRows
 
-----------
-### 3. Set up and deploy the application to GitHub Pages
-After your application development, you can deploy the application to GitHub Pages using the process below.
 
-#### 1. Create your GitHub Pages home website
-Before deploying a application to GitHub Pages, you need to first create your GitHub Pages home website `https://[your GitHub username].github.io`
-The instructions on how to create your GitHub Pages home website are available at this [link](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
-#### 2. Deploy the application to GitHub Pages
-Follow the instructions at this [link](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to deploy your application to GitHub Pages.
+
+
+Function addC:
+	case of numRows > 0:
+		I looped over numRows and add a new 'td' element at last to each row.
+	
+	case of numRows == 0:
+		I created a new row element 'tr'.
+		I append a new 'td' element to this row.
+		I append this row to the table.
+		add one to numRows.
+	
+	add one to numCols.
+
+
+
+Function removeR:
+	case of numRows > 0:
+		remove lastChild of table.
+		substract one from numRows.
+	
+		case of numRows == 0 after removing lastChild :
+			make numCols = 0 (to assure consistency  because if there's no row basically there's no column.)
+
+
+
+Function removeC:
+	case of numRows > 0:
+		I removed the  lastChild of table.
+		substract one from numRows.
+	
+		case of numRows == 0 after removing lastChild :
+			make numCols = 0 (to assure consistency  because if there's no row basically there's no column.)
+

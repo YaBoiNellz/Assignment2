@@ -3,6 +3,7 @@
 <head>
     <title>Grid Maker</title>
     <link rel="stylesheet" href="styles.css">
+		<script src="initialScript.js"></script>
 </head>
 <body>
     <!-- Menu Buttons -->
@@ -15,26 +16,22 @@
     <button onclick="clearAll()">Clear</button>
     <select onchange="selectColor()" id="selectedColorId">
         <option value="SELECT">SELECT</option>
-        <option value="Red">Red</option>
-        <option value="Blue">Blue</option>
-        <option value="Green">Green</option>
-        <option value="Yellow">Yellow</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
     </select>
     <!-- Grid Table -->
     <table id="grid">
-        <tr>
-            <td onclick="alert('Clicked a table cell');"></td>
-            <td onclick="alert('Clicked a table cell');"></td>
-            <td onclick="alert('Clicked a table cell');"></td>
-        </tr>
-        <tr>
-            <td onclick="alert('Clicked a table cell');"></td>
-            <td onclick="alert('Clicked a table cell');"></td>
-            <td onclick="alert('Clicked a table cell');"></td>
-          </tr>
-      
+			<tbody id="gridTable">
+				<tr>
+					<td onclick="handleColorChange(event)"></td>
+					<td onclick="handleColorChange(event)"></td>
+					<td onclick="handleColorChange(event)"></td>
+				</tr>
+			</tbody>
     </table>
     <!-- Script -->
-    <script src="script.js"></script>
+		<script src="script.js"></script>
 </body>
 </html>
